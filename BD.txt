@@ -1,0 +1,28 @@
+CREATE DATABASE Estoque;
+
+CREATE TABLE Usuario (
+    			Cod_usuario Int AUTO_INCREMENT PRIMARY KEY,
+    			Nome_usuario VARCHAR(80),
+   			Cargo VARCHAR(40),
+    			senha Int
+		     );
+	
+
+CREATE TABLE Fornecedor (
+    			  Cod_fornecedor INT AUTO_INCREMENT PRIMARY KEY,
+   			  Nome_fornecedor VARCHAR(90)
+			  Telefone VARCHAR(20),
+			  Endereco VARCHAR(80),
+                          UF CHAR(2)
+			);
+
+
+
+CREATE TABLE Produto (
+    			Cod_produto INT AUTO_INCREMENT PRIMARY KEY,
+    			Nome_produto VARCHAR(70),
+    			preco Decimal(7.2),
+			Cod_fornecedor Int,
+			FOREIGN KEY (Cod_fornecedor) references Fornecedor(cod_fornecedor)
+		
+		     );	
